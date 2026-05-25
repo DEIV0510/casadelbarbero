@@ -283,6 +283,23 @@ footer p{font-size:.7rem;color:var(--txt3);letter-spacing:1px}
 @keyframes ldDotPulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
 @keyframes ldFadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 
+/* ══ SWIPE HINT & SCROLL DOTS ═══════════════════ */
+.swipe-hint-row{
+  display:flex;align-items:center;justify-content:flex-end;gap:5px;
+  font-size:.58rem;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold3);margin-bottom:8px;
+  transition:opacity .5s;
+  animation:swipeHintBlink 2s ease-in-out 1.2s 3}
+@keyframes swipeHintBlink{0%,100%{opacity:.55}50%{opacity:1}}
+.swipe-hint-row.gone{opacity:0!important;animation:none;pointer-events:none}
+.scroll-dots{display:flex;justify-content:center;align-items:center;gap:7px;margin-top:12px}
+.scroll-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:rgba(212,160,23,.22);
+  transition:background .25s,width .3s,border-radius .3s;
+  cursor:pointer;border:none;padding:0;flex-shrink:0;outline:none;touch-action:manipulation}
+.scroll-dot.active{background:var(--gold);width:20px;border-radius:4px}
+
 /* ══ RESPONSIVE ══════════════════════════════════ */
 @media(max-width:900px){
   .services-grid{grid-template-columns:repeat(2,1fr)}
@@ -296,10 +313,50 @@ footer p{font-size:.7rem;color:var(--txt3);letter-spacing:1px}
   .stat+.stat::before{display:none}
   .contact-grid{grid-template-columns:1fr}
 }
-@media(max-width:540px){
-  .services-grid{grid-template-columns:1fr}
+@media(max-width:600px){
+  .container{padding:0 20px}
   .hero-btns{flex-direction:column;align-items:stretch}
   .btn{justify-content:center}
+
+  /* ── Carruseles horizontales ── */
+  .services-grid,
+  .contact-grid{
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    gap:14px;
+    padding:4px 20px 12px;
+    margin:0 -20px;
+  }
+  .services-grid::-webkit-scrollbar,
+  .contact-grid::-webkit-scrollbar{display:none}
+
+  .conf-items{
+    display:flex;
+    flex-direction:row;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    gap:14px;
+    padding:4px 20px 12px;
+    margin:0 -20px;
+  }
+  .conf-items::-webkit-scrollbar{display:none}
+
+  /* ancho de cada card en el carrusel */
+  .svc-card{flex:0 0 82vw;scroll-snap-align:start;min-width:0}
+  .contact-card{flex:0 0 75vw;scroll-snap-align:start;min-width:0}
+  .conf-item{flex:0 0 82vw;scroll-snap-align:start;margin-bottom:0;min-width:0}
+
+  /* botón al final de conf-items (no es .conf-item) */
+  .conf-items > div:not(.conf-item){
+    flex:0 0 auto;align-self:center;
+    padding:0 8px;margin:0!important;
+    scroll-snap-align:start;
+  }
 }
 </style>
 </head>
@@ -813,6 +870,59 @@ footer p{font-size:.7rem;color:var(--txt3);letter-spacing:1px}
     p.style.animationPlayState='paused';
     new IntersectionObserver(e=>p.style.animationPlayState=e[0].isIntersecting?'running':'paused',{threshold:0}).observe(p);
   });
+
+  /* ── MOBILE CAROUSELS (dots + swipe hint) ── */
+  function initCarousels(){
+    if(window.innerWidth > 600) return;
+    [
+      {sel:'.services-grid', cardSel:'.svc-card'},
+      {sel:'.contact-grid',  cardSel:'.contact-card'},
+      {sel:'.conf-items',    cardSel:'.conf-item'},
+    ].forEach(({sel, cardSel})=>{
+      const el = document.querySelector(sel);
+      if(!el) return;
+      const cards = Array.from(el.querySelectorAll(cardSel));
+      if(cards.length < 2) return;
+
+      // margen derecho en la última card para que pueda snappear al inicio
+      cards[cards.length-1].style.marginRight = '20px';
+
+      // ── swipe hint ──
+      const hint = document.createElement('div');
+      hint.className = 'swipe-hint-row';
+      hint.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Desliza</span>';
+      el.before(hint);
+      el.addEventListener('scroll', ()=>hint.classList.add('gone'), {passive:true, once:true});
+
+      // ── dots ──
+      const dotsEl = document.createElement('div');
+      dotsEl.className = 'scroll-dots';
+      dotsEl.setAttribute('aria-hidden','true');
+      const dots = cards.map((card, i)=>{
+        const d = document.createElement('button');
+        d.className = 'scroll-dot' + (i===0 ? ' active' : '');
+        d.setAttribute('aria-label', 'Ítem '+(i+1));
+        d.onclick = ()=>{
+          const off = card.getBoundingClientRect().left - el.getBoundingClientRect().left + el.scrollLeft;
+          el.scrollTo({left:off, behavior:'smooth'});
+        };
+        dotsEl.appendChild(d);
+        return d;
+      });
+      el.after(dotsEl);
+
+      // actualizar dot activo en cada scroll
+      el.addEventListener('scroll', ()=>{
+        let best=0, bestD=Infinity;
+        cards.forEach((card,i)=>{
+          const dist = Math.abs(card.getBoundingClientRect().left - el.getBoundingClientRect().left);
+          if(dist < bestD){ bestD=dist; best=i; }
+        });
+        dots.forEach((d,i)=>d.classList.toggle('active', i===best));
+      }, {passive:true});
+    });
+  }
+  initCarousels();
 
   upPB(); upNav();
 })();

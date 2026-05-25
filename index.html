@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="La Casa del Barbero — Cursos de barbería, asesorías, conferencias de emprendimiento y productos profesionales en Cali, Colombia. Formación con Mayk Ebano.">
+  <meta name="keywords" content="curso barbería Cali, barbero profesional Colombia, Mayk Ebano, emprendimiento barbería, productos barbería">
+  <meta property="og:title" content="La Casa del Barbero | Cali, Colombia">
+  <meta property="og:description" content="Domina el Arte. Construye tu Imperio. Cursos, asesorías y conferencias de emprendimiento para barberos en Cali.">
+  <meta property="og:type" content="website">
+  <title>La Casa del Barbero | Cali, Colombia</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Montserrat:wght@300;400;500;600;700;800&family=Dancing+Script:wght@700&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ══ SCROLL PROGRESS ══ -->
+<div id="progress-bar" role="progressbar" aria-label="Progreso de página"></div>
+
+<!-- ══ FLOATING WHATSAPP ══ -->
+<a href="https://wa.me/573206878204?text=Hola%2C%20me%20interesa%20conocer%20más%20sobre%20La%20Casa%20del%20Barbero"
+   target="_blank" rel="noopener noreferrer"
+   class="fab-wa" aria-label="Contactar por WhatsApp">
+  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+</a>
+
+<!-- ══ MOBILE MENU ══ -->
+<div class="m-menu" id="mMenu" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+  <button class="m-close" id="mClose" aria-label="Cerrar menú">&#10005;</button>
+  <a href="#servicios"    onclick="closeMenu()">Servicios</a>
+  <a href="#maestro"      onclick="closeMenu()">El Maestro</a>
+  <a href="#curso"        onclick="closeMenu()">Cursos</a>
+  <a href="#conferencias" onclick="closeMenu()">Conferencias</a>
+  <a href="#faq"          onclick="closeMenu()">FAQ</a>
+  <a href="#contacto"     onclick="closeMenu()">Contacto</a>
+  <a href="https://wa.me/573206878204" target="_blank" rel="noopener"
+     class="btn btn-gold" onclick="closeMenu()">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+  </a>
+</div>
+
+<!-- ══════════════════════ NAVBAR ══════════════════════ -->
+<nav class="nav" id="navbar" aria-label="Navegación principal">
+  <div class="container">
+    <div class="nav-inner">
+
+      <a href="#inicio" class="nav-logo" aria-label="La Casa del Barbero — inicio">
+        <!-- Logo SVG: razor blade + barber poles -->
+        <svg class="nav-logo-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Left pole -->
+          <rect x="1.5" y="6" width="5.5" height="32" rx="2.75" fill="url(#lp)"/>
+          <rect x="1" y="4.5" width="6.5" height="3" rx="1.5" fill="#999"/>
+          <rect x="1" y="36.5" width="6.5" height="3" rx="1.5" fill="#999"/>
+          <!-- Right pole -->
+          <rect x="37" y="6" width="5.5" height="32" rx="2.75" fill="url(#rp)"/>
+          <rect x="36.5" y="4.5" width="6.5" height="3" rx="1.5" fill="#999"/>
+          <rect x="36.5" y="36.5" width="6.5" height="3" rx="1.5" fill="#999"/>
+          <!-- Razor body -->
+          <rect x="8.5" y="16" width="27" height="12" rx="2" fill="url(#rc)"/>
+          <!-- Razor edge notch -->
+          <path d="M8.5 22 L14 16" stroke="rgba(0,0,0,.4)" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Screws -->
+          <circle cx="30" cy="22" r="1.5" fill="rgba(0,0,0,.35)"/>
+          <circle cx="33.5" cy="22" r="1.5" fill="rgba(0,0,0,.35)"/>
+          <!-- B letter -->
+          <text x="22" y="26.5" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#111" text-anchor="middle" letter-spacing=".5">B</text>
+          <defs>
+            <linearGradient id="rc" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%"   stop-color="#909090"/>
+              <stop offset="30%"  stop-color="#e8e8e8"/>
+              <stop offset="55%"  stop-color="#d0d0d0"/>
+              <stop offset="80%"  stop-color="#f5f5f5"/>
+              <stop offset="100%" stop-color="#888"/>
+            </linearGradient>
+            <linearGradient id="lp" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#CC0000"/>
+              <stop offset="30%"  stop-color="#fff"/>
+              <stop offset="60%"  stop-color="#0044BB"/>
+              <stop offset="100%" stop-color="#CC0000"/>
+            </linearGradient>
+            <linearGradient id="rp" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#0044BB"/>
+              <stop offset="30%"  stop-color="#fff"/>
+              <stop offset="60%"  stop-color="#CC0000"/>
+              <stop offset="100%" stop-color="#0044BB"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div>
+          <span class="nav-logo-top">La Casa del</span>
+          <span class="nav-logo-main">BARBERO</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#maestro">El Maestro</a></li>
+        <li><a href="#curso">Cursos</a></li>
+        <li><a href="#conferencias">Conferencias</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+
+      <a href="https://wa.me/573206878204" target="_blank" rel="noopener noreferrer"
+         class="btn btn-gold" style="white-space:nowrap">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> Inscríbete
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero" id="inicio" aria-labelledby="hero-h1">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-rays" aria-hidden="true"></div>
+
+  <!-- Decorative razor watermark -->
+  <svg class="hero-razor-bg" viewBox="0 0 800 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <rect x="80" y="60" width="640" height="180" rx="24" fill="#C8C8C8"/>
+    <path d="M80 150 L170 60" stroke="#aaa" stroke-width="8" stroke-linecap="round"/>
+    <path d="M80 150 L170 240" stroke="#aaa" stroke-width="8" stroke-linecap="round"/>
+    <rect x="600" y="90" width="80" height="120" rx="4" fill="#888" opacity=".5"/>
+    <circle cx="650" cy="150" r="12" fill="#666"/>
+    <circle cx="680" cy="150" r="12" fill="#666"/>
+  </svg>
+
+  <div class="container">
+    <div class="hero-inner">
+
+      <!-- Left barber pole -->
+      <div class="hero-poles" aria-hidden="true">
+        <div class="pole pole--xl">
+          <div class="pole-stripes"></div>
+          <div class="pole-cap pole-cap-top"></div>
+          <div class="pole-cap pole-cap-bot"></div>
+          <div class="pole-shine"></div>
+        </div>
+      </div>
+
+      <!-- Main content -->
+      <div class="hero-text">
+        <div class="hero-eyebrow" aria-hidden="true">
+          <span class="eyebrow-line"></span>
+          <span>Cali &middot; Colombia</span>
+          <span class="eyebrow-line"></span>
+        </div>
+
+        <span class="hero-script" aria-hidden="true">La Casa del</span>
+        <h1 class="hero-title" id="hero-h1">BARBERO</h1>
+        <div class="hero-rule" aria-hidden="true"></div>
+        <p class="hero-tagline">Domina el Arte &mdash; Construye tu Imperio</p>
+
+        <div class="hero-actions">
+          <a href="https://wa.me/573206878204?text=Hola%2C%20quiero%20inscribirme%20al%20Curso%20de%20Barber%C3%ADa"
+             target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-lg">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> Inscribirse Ahora
+          </a>
+          <a href="#servicios" class="btn btn-outline btn-lg">
+            Explorar Servicios <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right barber pole -->
+      <div class="hero-poles" aria-hidden="true">
+        <div class="pole pole--xl">
+          <div class="pole-stripes"></div>
+          <div class="pole-cap pole-cap-top"></div>
+          <div class="pole-cap pole-cap-bot"></div>
+          <div class="pole-shine"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <div class="scroll-mouse"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ══ RAZOR DRIP DIVIDER ══ -->
+<div class="razor-drip" aria-hidden="true">
+  <svg viewBox="0 0 1440 64" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,0 L1440,0 L1440,20
+      C1380,20 1360,42 1310,42 C1260,42 1240,20 1190,20
+      C1140,20 1120,48 1060,48 C1000,48 980,20 920,20
+      C860,20 840,52 780,52 C720,52 700,20 640,20
+      C580,20 560,44 500,44 C440,44 420,20 360,20
+      C300,20 280,50 220,50 C160,50 140,20 80,20
+      C40,20 20,38 0,38 Z"
+      fill="#0A0000"/>
+    <path d="M0,8 L1440,8 L1440,28
+      C1380,28 1360,50 1310,50 C1260,50 1240,28 1190,28
+      C1140,28 1120,56 1060,56 C1000,56 980,28 920,28
+      C860,28 840,60 780,60 C720,60 700,28 640,28
+      C580,28 560,52 500,52 C440,52 420,28 360,28
+      C300,28 280,58 220,58 C160,58 140,28 80,28
+      C40,28 20,46 0,46 Z"
+      fill="#8B0000" opacity=".35"/>
+  </svg>
+</div>
+
+<!-- ══════════════════════════════════════
+     STATS BAR
+══════════════════════════════════════ -->
+<section class="stats" aria-label="Estadísticas">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat rv d1">
+        <div class="stat-num" data-count="10" data-suffix="+">0</div>
+        <div class="stat-lbl">Años de Experiencia</div>
+      </div>
+      <div class="stat rv d2">
+        <div class="stat-num" data-count="500" data-suffix="+">0</div>
+        <div class="stat-lbl">Barberos Formados</div>
+      </div>
+      <div class="stat rv d3">
+        <div class="stat-num" data-count="100" data-suffix="+">0</div>
+        <div class="stat-lbl">Productos Profesionales</div>
+      </div>
+      <div class="stat rv d4">
+        <div class="stat-num" data-count="7" data-suffix="">7</div>
+        <div class="stat-lbl">Cupos por Grupo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SERVICES
+══════════════════════════════════════ -->
+<section class="services" id="servicios" aria-labelledby="srv-title">
+  <div class="container">
+    <div class="services-hd">
+      <div class="section-tag rv">Nuestros Servicios</div>
+      <h2 class="section-title rv d1" id="srv-title">
+        Todo lo que necesita<br>para su <span class="text-gold">Barbería</span>
+      </h2>
+    </div>
+
+    <div class="cards-grid">
+
+      <article class="service-card rv d1" tabindex="0">
+        <div class="sc-glow" aria-hidden="true"></div>
+        <div class="sc-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></div>
+        <h3 class="sc-title">Curso de Barbería</h3>
+        <p class="sc-desc">Formación personalizada e intensiva. Cortes modernos y clásicos, afeitado con navaja, arreglo de barba y experiencia práctica real — solo 7 cupos por grupo.</p>
+        <span class="sc-badge"><i class="fas fa-fire" aria-hidden="true"></i> Solo 7 Cupos</span>
+      </article>
+
+      <article class="service-card rv d2" tabindex="0">
+        <div class="sc-glow" aria-hidden="true"></div>
+        <div class="sc-icon" aria-hidden="true"><i class="fas fa-user-tie"></i></div>
+        <h3 class="sc-title">Asesoría Personalizada</h3>
+        <p class="sc-desc">Consultoría uno a uno para barberos y dueños de barbería. Diagnóstico completo de tu negocio, estrategias de crecimiento y mentoría continua.</p>
+        <span class="sc-badge"><i class="fas fa-star" aria-hidden="true"></i> 1 a 1</span>
+      </article>
+
+      <article class="service-card rv d3" tabindex="0">
+        <div class="sc-glow" aria-hidden="true"></div>
+        <div class="sc-icon" aria-hidden="true"><i class="fas fa-chalkboard-teacher"></i></div>
+        <h3 class="sc-title">Capacitaciones</h3>
+        <p class="sc-desc">Talleres especializados para equipos de barbería. Eleva el nivel técnico de tu staff y aumenta la calidad de servicio en tu establecimiento.</p>
+        <span class="sc-badge"><i class="fas fa-certificate" aria-hidden="true"></i> Certificado</span>
+      </article>
+
+      <article class="service-card rv d1" tabindex="0">
+        <div class="sc-glow" aria-hidden="true"></div>
+        <div class="sc-icon" aria-hidden="true"><i class="fas fa-store"></i></div>
+        <h3 class="sc-title">Productos Profesionales</h3>
+        <p class="sc-desc">Distribución y comercialización de insumos y herramientas de primera calidad para barbería al por mayor y al detal. Todo lo que tu negocio necesita.</p>
+        <span class="sc-badge"><i class="fas fa-tag" aria-hidden="true"></i> Mayor y Detal</span>
+      </article>
+
+      <article class="service-card rv d2" tabindex="0">
+        <div class="sc-glow" aria-hidden="true"></div>
+        <div class="sc-icon" aria-hidden="true"><i class="fas fa-chart-line"></i></div>
+        <h3 class="sc-title">Gerencia de Barbería</h3>
+        <p class="sc-desc">Aprende a vender, administrar y gerenciar tu barbería como un empresario. Marketing, finanzas, contratación y estrategias de fidelización de clientes.</p>
+        <span class="sc-badge"><i class="fas fa-rocket" aria-hidden="true"></i> Empresarial</span>
+      </article>
+
+      <article class="service-card rv d3" tabindex="0">
+        <div class="sc-glow" aria-hidden="true"></div>
+        <div class="sc-icon" aria-hidden="true"><i class="fas fa-microphone-alt"></i></div>
+        <h3 class="sc-title">Conferencias</h3>
+        <p class="sc-desc">Conferencias de emprendimiento y liderazgo que transforman la mentalidad. Disponibles para eventos, empresas y comunidades de emprendedores en toda Colombia.</p>
+        <span class="sc-badge"><i class="fas fa-lightbulb" aria-hidden="true"></i> Inspiracional</span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     INSTRUCTOR — MAYK EBANO
+══════════════════════════════════════ -->
+<section class="instructor" id="maestro" aria-labelledby="inst-title">
+  <div class="container">
+    <div class="inst-grid">
+
+      <!-- Portrait art -->
+      <div class="inst-portrait rv-l">
+        <div class="inst-frame" aria-hidden="true">
+          <div class="inst-frame-bg"></div>
+          <div class="inst-monogram">
+            <span class="inst-monogram-letters">ME</span>
+            <span class="inst-monogram-sub">Fundador &amp; Instructor</span>
+          </div>
+          <div class="inst-frame-deco"></div>
+        </div>
+        <div class="inst-stars" aria-label="5 estrellas" aria-hidden="true">
+          <i class="fas fa-star inst-star"></i>
+          <i class="fas fa-star inst-star"></i>
+          <i class="fas fa-star inst-star"></i>
+          <i class="fas fa-star inst-star"></i>
+          <i class="fas fa-star inst-star"></i>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="rv-r">
+        <div class="section-tag inst-tag">Fundador &amp; Instructor</div>
+        <span class="inst-name" id="inst-title">Mayk</span>
+        <span class="inst-surname">EBANO</span>
+
+        <div class="inst-motto" aria-label="Mentalidad · Disciplina · Éxito">
+          Mentalidad <span style="color:var(--txt3);font-size:inherit">·</span>
+          Disciplina <span style="color:var(--txt3);font-size:inherit">·</span> Éxito
+        </div>
+
+        <p class="inst-bio">
+          Con más de una década de trayectoria en el mundo de la barbería colombiana, Mayk Ebano ha formado a cientos de profesionales que hoy dirigen sus propias barberías exitosas. Su metodología única combina técnica de élite con mentalidad empresarial — porque cortar el cabello es el oficio, pero <strong style="color:var(--txt)">construir tu negocio es el destino.</strong>
+        </p>
+
+        <div class="inst-quote">
+          <p>"Tu sueño es el comienzo. Tu disciplina es el éxito. No se trata de tener ideas — se trata de hacer que sucedan."</p>
+        </div>
+
+        <div class="inst-creds">
+          <span class="inst-cred"><i class="fas fa-trophy" aria-hidden="true"></i> 10+ años formando barberos</span>
+          <span class="inst-cred"><i class="fas fa-users" aria-hidden="true"></i> 500+ estudiantes en Colombia</span>
+          <span class="inst-cred"><i class="fas fa-microphone-alt" aria-hidden="true"></i> Conferencista nacional</span>
+          <span class="inst-cred"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Cali, Colombia</span>
+        </div>
+
+        <a href="https://wa.me/573206878204?text=Hola%2C%20quiero%20agendar%20una%20asesor%C3%ADa%20con%20Mayk%20Ebano"
+           target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> Agendar con Mayk
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FEATURED COURSE
+══════════════════════════════════════ -->
+<section class="course" id="curso" aria-labelledby="course-title">
+  <div class="container">
+    <div class="course-grid">
+
+      <!-- Text side -->
+      <div>
+        <div class="section-tag rv">Formación Especializada</div>
+        <span class="course-script rv d1">Aprende el Arte de la</span>
+        <h2 class="course-headline rv d1" id="course-title">CURSO<br>DE<br>BARBERÍA</h2>
+        <p class="course-sub rv d2">Villas de Guadalupe &middot; Cali, Colombia</p>
+
+        <ul class="feat-list rv d2" aria-label="Contenido del curso">
+          <li class="feat-item">
+            <span class="feat-check" aria-hidden="true"><i class="fas fa-check"></i></span>
+            Técnicas de corte modernas y clásicas
+          </li>
+          <li class="feat-item">
+            <span class="feat-check" aria-hidden="true"><i class="fas fa-check"></i></span>
+            Afeitado con navaja y máquina profesional
+          </li>
+          <li class="feat-item">
+            <span class="feat-check" aria-hidden="true"><i class="fas fa-check"></i></span>
+            Diseño, arreglo y perfilado de barba
+          </li>
+          <li class="feat-item">
+            <span class="feat-check" aria-hidden="true"><i class="fas fa-check"></i></span>
+            Atención al cliente y experiencia en silla
+          </li>
+          <li class="feat-item">
+            <span class="feat-check" aria-hidden="true"><i class="fas fa-check"></i></span>
+            Módulo de emprendimiento: cómo abrir tu propia barbería
+          </li>
+          <li class="feat-item">
+            <span class="feat-check" aria-hidden="true"><i class="fas fa-check"></i></span>
+            Certificación oficial al finalizar
+          </li>
+          <li class="feat-item">
+            <span class="feat-check" aria-hidden="true"><i class="fas fa-check"></i></span>
+            Grupos reducidos — máximo 7 estudiantes
+          </li>
+        </ul>
+
+        <div class="rv d3">
+          <a href="https://wa.me/573206878204?text=Hola%2C%20quiero%20reservar%20mi%20cupo%20en%20el%20Curso%20de%20Barber%C3%ADa"
+             target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-lg">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> Reservar Mi Cupo
+          </a>
+        </div>
+      </div>
+
+      <!-- Visual card -->
+      <div class="rv-r">
+        <div class="course-card">
+          <div class="course-card-glow" aria-hidden="true"></div>
+
+          <div class="urgency" aria-label="Solo 7 cupos disponibles">
+            <span class="urgency-top">SOLO</span>
+            <span class="urgency-num">7</span>
+            <span class="urgency-bot">CUPOS</span>
+          </div>
+
+          <div class="poles-row" aria-hidden="true">
+            <div class="pole pole--md">
+              <div class="pole-stripes"></div>
+              <div class="pole-cap pole-cap-top"></div>
+              <div class="pole-cap pole-cap-bot"></div>
+              <div class="pole-shine"></div>
+            </div>
+            <div class="poles-row-lbl" style="text-align:center">
+              <p style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--txt)">Curso</p>
+              <span>Personalizado</span>
+            </div>
+            <div class="pole pole--md">
+              <div class="pole-stripes"></div>
+              <div class="pole-cap pole-cap-top"></div>
+              <div class="pole-cap pole-cap-bot"></div>
+              <div class="pole-shine"></div>
+            </div>
+          </div>
+
+          <div class="course-highlights">
+            <div class="ch-item">
+              <div class="ch-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
+              <div class="ch-lbl">Grupos Pequeños</div>
+            </div>
+            <div class="ch-item">
+              <div class="ch-icon" aria-hidden="true"><i class="fas fa-certificate"></i></div>
+              <div class="ch-lbl">Certificación</div>
+            </div>
+            <div class="ch-item">
+              <div class="ch-icon" aria-hidden="true"><i class="fas fa-hands-helping"></i></div>
+              <div class="ch-lbl">Práctica Real</div>
+            </div>
+            <div class="ch-item">
+              <div class="ch-icon" aria-hidden="true"><i class="fas fa-rocket"></i></div>
+              <div class="ch-lbl">Módulo Empresarial</div>
+            </div>
+          </div>
+
+          <!-- Process steps -->
+          <div style="margin-top:24px;text-align:left;position:relative;z-index:1">
+            <p style="font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--txt3);margin-bottom:14px;text-align:center">CÓMO INSCRIBIRSE</p>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:var(--txt2)">
+                <span style="width:24px;height:24px;background:var(--g-gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#000;flex-shrink:0">1</span>
+                Escríbenos por WhatsApp
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:var(--txt2)">
+                <span style="width:24px;height:24px;background:var(--g-gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#000;flex-shrink:0">2</span>
+                Confirma tu cupo y fecha
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:var(--txt2)">
+                <span style="width:24px;height:24px;background:var(--g-gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#000;flex-shrink:0">3</span>
+                ¡Empieza tu transformación!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════ -->
+<section class="testimonials" aria-labelledby="testi-title">
+  <div class="container">
+    <div class="testimonials-hd">
+      <div class="section-tag rv">Testimonios</div>
+      <h2 class="section-title rv d1" id="testi-title">Lo que dicen nuestros <span class="text-gold">Estudiantes</span></h2>
+    </div>
+
+    <div class="testi-grid">
+
+      <article class="testi-card rv d1">
+        <div class="testi-stars" aria-label="5 de 5 estrellas">
+          <i class="fas fa-star testi-star" aria-hidden="true"></i>
+          <i class="fas fa-star testi-star" aria-hidden="true"></i>
+          <i class="fas fa-star testi-star" aria-hidden="true"></i>
+          <i class="fas fa-star testi-star" aria-hidden="true"></i>
+          <i class="fas fa-star testi-star" aria-hidden="true"></i>
+        </div>
+        <p class="testi-quote">"El curso superó todas mis expectativas. En 3 meses ya tenía mi propia barbería abierta en el barrio. Mayk no solo enseña a cortar — te enseña a pensar como empresario."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" aria-hidden="true">JM</div>
+          <div>
+            <div class="testi-name">Juan Morales</div>
+            <div class="testi-role">Dueño de Barbería · Cali</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="testi-card rv d2">
+        <div class="testi-stars" aria-label="5 de 5 estrellas">
+          <i class="fas fa-star testi-star" aria-hidden="true"></i>
+          <i class="fas fa-star testi-star" aria-hidden="true"></i>
+          <i class="fas fa-star testi-star" aria-hidden="true"></i>
+          <i class="fas fa-star testi-star" aria-hidden="true"></i>
+          <i class="fas fa-star testi-star" aria-hidden="true"></i>
+        </div>
+        <p class="testi-quote">"Los grupos pequeños hacen toda la diferencia. Tuve atención personalizada todo el tiempo y pude aprender a mi propio ritmo. Hoy soy barbera certificada y no me arrepiento de nada."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" aria-hidden="true">AC</div>
+          <div>
+            <div class="testi-name">Andrea Castro</div>
+            <div class="testi-role">Barbera Profesional · Palmira</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="testi-card rv d3">
+        <div class="testi-stars" aria-label="5 de 5 estrellas">
+          <i class="fas fa-star testi-star" aria-hidden="true"></i>
+          <i class="fas fa-star testi-star" aria-hidden="true"></i>
+          <i class="fas fa-star testi-star" aria-hidden="true"></i>
+          <i class="fas fa-star testi-star" aria-hidden="true"></i>
+          <i class="fas fa-star testi-star" aria-hidden="true"></i>
+        </div>
+        <p class="testi-quote">"La conferencia de emprendimiento cambió mi mentalidad completamente. Antes veía mi barbería como un trabajo — ahora la veo como un negocio con potencial real de crecer."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" aria-hidden="true">CR</div>
+          <div>
+            <div class="testi-name">Carlos Rodríguez</div>
+            <div class="testi-role">Empresario Barbero · Bogotá</div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CONFERENCIAS
+══════════════════════════════════════ -->
+<section class="conferencias" id="conferencias" aria-labelledby="conf-title">
+  <div class="container">
+    <div class="conf-grid">
+
+      <!-- Topics card -->
+      <div class="rv-l">
+        <div class="conf-card">
+          <div class="conf-card-icon" aria-hidden="true"><i class="fas fa-microphone-alt"></i></div>
+          <h3 class="conf-card-title">Temas de Conferencia</h3>
+          <div class="conf-topics" role="list">
+            <div class="conf-topic" role="listitem">
+              <div class="conf-topic-ic" aria-hidden="true"><i class="fas fa-rocket"></i></div>
+              Emprendimiento desde cero para barberos
+            </div>
+            <div class="conf-topic" role="listitem">
+              <div class="conf-topic-ic" aria-hidden="true"><i class="fas fa-crown"></i></div>
+              Liderazgo y construcción de equipos
+            </div>
+            <div class="conf-topic" role="listitem">
+              <div class="conf-topic-ic" aria-hidden="true"><i class="fas fa-brain"></i></div>
+              Mentalidad de éxito y disciplina
+            </div>
+            <div class="conf-topic" role="listitem">
+              <div class="conf-topic-ic" aria-hidden="true"><i class="fas fa-chart-bar"></i></div>
+              Ventas, marketing y redes sociales
+            </div>
+            <div class="conf-topic" role="listitem">
+              <div class="conf-topic-ic" aria-hidden="true"><i class="fas fa-coins"></i></div>
+              Finanzas y administración del negocio
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="conf-text">
+        <div class="section-tag rv">Emprendimiento &amp; Liderazgo</div>
+        <h2 class="section-title rv d1" id="conf-title">
+          Conferencias que<br><span class="text-gold">Transforman</span>
+        </h2>
+        <p class="conf-desc rv d2">
+          Más allá del corte: La Casa del Barbero es una escuela de vida. Nuestras conferencias han impactado a cientos de emprendedores en Cali y toda Colombia, cambiando la forma en que los barberos ven su oficio.
+        </p>
+        <p class="conf-desc rv d2">
+          Disponibles para eventos corporativos, convenciones de barbería, escuelas de emprendimiento y comunidades. <em style="color:var(--txt)">"No se trata de tener ideas — se trata de hacer que sucedan."</em>
+        </p>
+        <div class="rv d3" style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="https://wa.me/573206878204?text=Hola%2C%20me%20interesa%20contratar%20una%20conferencia"
+             target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+            <i class="fas fa-calendar-alt" aria-hidden="true"></i> Solicitar Conferencia
+          </a>
+          <a href="https://www.instagram.com/lacasadelbarberocali/" target="_blank" rel="noopener noreferrer"
+             class="btn btn-ig">
+            <i class="fab fa-instagram" aria-hidden="true"></i> Ver Instagram
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     PRODUCTS
+══════════════════════════════════════ -->
+<section class="products" id="productos" aria-labelledby="prod-title">
+  <div class="container">
+    <div class="products-hd">
+      <div class="section-tag rv">Distribución Profesional</div>
+      <h2 class="section-title rv d1" id="prod-title">
+        Productos para tu <span class="text-gold">Barbería</span>
+      </h2>
+    </div>
+    <div class="prod-grid">
+      <div class="prod-card rv d1">
+        <div class="prod-icon" aria-hidden="true"><i class="fas fa-cut"></i></div>
+        <div class="prod-name">Máquinas de Corte</div>
+        <div class="prod-desc">Profesionales de alto rendimiento y durabilidad</div>
+      </div>
+      <div class="prod-card rv d2">
+        <div class="prod-icon" aria-hidden="true">
+          <!-- Custom razor SVG -->
+          <svg width="40" height="28" viewBox="0 0 80 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="8" width="72" height="12" rx="2" fill="#D4A017"/>
+            <rect x="4" y="8" width="12" height="12" rx="1.5" fill="#9A7412"/>
+            <path d="M4 14 L10 8" stroke="#D4A017" stroke-width="2"/>
+            <path d="M4 14 L10 20" stroke="#D4A017" stroke-width="2"/>
+            <rect x="58" y="10" width="14" height="8" rx="1" fill="#A07010"/>
+            <circle cx="63" cy="14" r="2" fill="rgba(0,0,0,.4)"/>
+            <circle cx="70" cy="14" r="2" fill="rgba(0,0,0,.4)"/>
+            <rect x="4" y="7.5" width="72" height="1.5" rx=".75" fill="rgba(255,255,255,.25)"/>
+          </svg>
+        </div>
+        <div class="prod-name">Navajas &amp; Cuchillas</div>
+        <div class="prod-desc">Afeitado perfecto, precisión absoluta</div>
+      </div>
+      <div class="prod-card rv d3">
+        <div class="prod-icon" aria-hidden="true"><i class="fas fa-pump-soap"></i></div>
+        <div class="prod-name">Cremas &amp; Aceites</div>
+        <div class="prod-desc">Líneas premium de cuidado capilar y barba</div>
+      </div>
+      <div class="prod-card rv d4">
+        <div class="prod-icon" aria-hidden="true"><i class="fas fa-toolbox"></i></div>
+        <div class="prod-name">Herramientas</div>
+        <div class="prod-desc">Tijeras, peines, cepillos y accesorios</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FAQ
+══════════════════════════════════════ -->
+<section class="faq" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="faq-hd">
+      <div class="section-tag rv">Preguntas Frecuentes</div>
+      <h2 class="section-title rv d1" id="faq-title">
+        Resolvemos tus <span class="text-gold">Dudas</span>
+      </h2>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-item rv d1">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-q-text">¿Qué incluye el Curso de Barbería?</span>
+          <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="faq-answer" style="max-height:0">
+          <p>El curso incluye técnicas de corte modernas y clásicas, afeitado con navaja y máquina profesional, diseño y arreglo de barba, atención al cliente, y un módulo de emprendimiento para que puedas abrir tu propia barbería. Al finalizar recibes una certificación oficial. Los grupos son de máximo 7 personas para atención personalizada.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rv d2">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-q-text">¿Necesito experiencia previa para inscribirme?</span>
+          <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="faq-answer" style="max-height:0">
+          <p>No. El curso está diseñado para personas que inician desde cero, así como para barberos con experiencia que quieren perfeccionar sus técnicas. El sistema de grupos pequeños nos permite adaptar el ritmo de aprendizaje a cada estudiante.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rv d3">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-q-text">¿Dónde se realizan los cursos y capacitaciones?</span>
+          <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="faq-answer" style="max-height:0">
+          <p>Nuestra sede principal está ubicada en Cra 62 #17a-67, Villas de Guadalupe, Cali, Colombia. También realizamos capacitaciones y conferencias en otras ciudades del país bajo solicitud especial. Contáctanos para coordinar.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rv d4">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-q-text">¿Venden productos de barbería al por mayor?</span>
+          <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="faq-answer" style="max-height:0">
+          <p>Sí. Ofrecemos distribución de productos profesionales para barbería tanto al por mayor como al detal. Máquinas de corte, navajas, cuchillas, cremas, aceites, herramientas y accesorios. Escríbenos por WhatsApp para conocer el catálogo completo y los precios mayoristas.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rv d5">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-q-text">¿Cómo puedo contratar una conferencia de emprendimiento?</span>
+          <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="faq-answer" style="max-height:0">
+          <p>Las conferencias de Mayk Ebano están disponibles para eventos empresariales, convenciones de barbería, institutos educativos y comunidades de emprendedores. Para cotizar y agendar, contáctanos directamente por WhatsApp al +57 320 6878204 con los detalles de tu evento.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rv d6">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-q-text">¿Cómo me inscribo al curso o a una asesoría?</span>
+          <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="faq-answer" style="max-height:0">
+          <p>El proceso es simple: escríbenos por WhatsApp al +57 320 6878204 o visítanos en Instagram @lacasadelbarberocali. Te informaremos sobre los próximos grupos disponibles, confirmarás tu cupo y recibirás toda la información para comenzar. Los cupos son limitados a 7 personas por grupo, así que te recomendamos reservar con anticipación.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FINAL CTA
+══════════════════════════════════════ -->
+<section class="cta-final" id="contacto" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="section-tag rv cta-pre" style="justify-content:center">Empieza Hoy</div>
+      <h2 class="cta-title rv d1" id="cta-title">
+        ¿Listo para transformar<br>tu <span class="text-gold">pasión en negocio</span>?
+      </h2>
+      <p class="cta-sub rv d2">
+        Únete a los cientos de barberos que ya cambiaron su vida con La Casa del Barbero. Tu próximo paso empieza con un mensaje.
+      </p>
+      <div class="cta-actions rv d3">
+        <a href="https://wa.me/573206878204?text=Hola%2C%20quiero%20conocer%20m%C3%A1s%20sobre%20La%20Casa%20del%20Barbero"
+           target="_blank" rel="noopener noreferrer" class="btn btn-wa">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> Escribir por WhatsApp
+        </a>
+        <a href="https://www.instagram.com/lacasadelbarberocali/"
+           target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+          <i class="fab fa-instagram" aria-hidden="true"></i> Seguirnos en Instagram
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CONTACT INFO
+══════════════════════════════════════ -->
+<section class="contact-info" aria-label="Información de contacto">
+  <div class="container">
+    <div class="info-grid">
+      <div class="info-item rv d1">
+        <div class="info-ic" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <div class="info-lbl">Dirección</div>
+          <div class="info-val">Cra 62 #17a-67, Villas de Guadalupe<br>Cali, Colombia</div>
+        </div>
+      </div>
+      <div class="info-item rv d2">
+        <div class="info-ic" aria-hidden="true"><i class="fab fa-whatsapp"></i></div>
+        <div>
+          <div class="info-lbl">WhatsApp</div>
+          <a href="https://wa.me/573206878204" target="_blank" rel="noopener noreferrer"
+             class="info-val" style="color:#25D366">+57 320 6878204</a>
+        </div>
+      </div>
+      <div class="info-item rv d3">
+        <div class="info-ic" aria-hidden="true"><i class="fab fa-instagram"></i></div>
+        <div>
+          <div class="info-lbl">Instagram</div>
+          <a href="https://www.instagram.com/lacasadelbarberocali/"
+             target="_blank" rel="noopener noreferrer"
+             class="info-val" style="color:var(--gold)">@lacasadelbarberocali</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-inner">
+
+      <div>
+        <span class="foot-brand-top">La Casa del</span>
+        <span class="foot-brand-main">BARBERO</span>
+        <p class="foot-tagline">Todo lo que necesita para su Barbería</p>
+      </div>
+
+      <nav class="foot-links" aria-label="Navegación secundaria">
+        <a href="#servicios">Servicios</a>
+        <a href="#maestro">El Maestro</a>
+        <a href="#curso">Cursos</a>
+        <a href="#conferencias">Conferencias</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <nav class="foot-socials" aria-label="Redes sociales">
+        <a href="https://www.instagram.com/lacasadelbarberocali/"
+           target="_blank" rel="noopener noreferrer"
+           class="foot-soc" aria-label="Instagram @lacasadelbarberocali">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://wa.me/573206878204"
+           target="_blank" rel="noopener noreferrer"
+           class="foot-soc" aria-label="WhatsApp +57 320 6878204">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+        <a href="tel:+573206878204" class="foot-soc" aria-label="Llamar">
+          <i class="fas fa-phone" aria-hidden="true"></i>
+        </a>
+      </nav>
+
+    </div>
+
+    <div class="foot-copy">
+      <p>&copy; 2025 La Casa del Barbero &nbsp;&middot;&nbsp; Cali, Colombia &nbsp;&middot;&nbsp; Todos los derechos reservados</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

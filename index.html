@@ -162,10 +162,10 @@ section{padding:96px 0}
 .maestro-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .maestro-visual{display:flex;align-items:center;justify-content:center;position:relative}
 .maestro-frame{width:240px;height:300px;border-radius:var(--r);position:relative;
-  background:linear-gradient(160deg,rgba(180,0,0,.25) 0%,rgba(40,0,0,.6) 100%);
-  border:1px solid rgba(212,160,23,.2);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  box-shadow:0 40px 80px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.04)}
+  overflow:hidden;
+  border:1px solid rgba(212,160,23,.25);
+  box-shadow:0 40px 80px rgba(0,0,0,.6),0 0 0 4px rgba(212,160,23,.07)}
+.maestro-photo{width:100%;height:100%;object-fit:cover;object-position:center 10%;display:block}
 .maestro-frame::before,.maestro-frame::after{
   content:'';position:absolute;width:22px;height:22px;
   border-color:var(--gold);border-style:solid;opacity:.5}
@@ -380,11 +380,54 @@ footer p{font-size:.7rem;color:var(--txt3);letter-spacing:1px}
   cursor:pointer;border:none;padding:0;flex-shrink:0;outline:none;touch-action:manipulation}
 .scroll-dot.active{background:var(--gold);width:20px;border-radius:4px}
 
+/* ══ VIDEO — EN EL AULA ══════════════════════════ */
+.clase-section{overflow:hidden}
+.clase-video-outer{position:relative;max-width:960px;margin:0 auto;border-radius:var(--r);overflow:hidden;
+  box-shadow:0 24px 72px rgba(0,0,0,.7),0 0 0 1px rgba(212,160,23,.1)}
+.clase-video{width:100%;height:auto;display:block;max-height:520px;object-fit:cover}
+.clase-caption{text-align:center;margin-top:28px}
+.clase-caption .clase-quote{font-family:'Dancing Script',cursive;font-size:1.25rem;color:var(--gold);display:block;margin-bottom:6px;opacity:.85}
+.clase-caption p{font-size:.8rem;color:var(--txt3);letter-spacing:1.5px;text-transform:uppercase}
+
+/* ══ PRÓXIMO CURSO ════════════════════════════════ */
+.curso-section{background:var(--dark2)}
+.curso-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.curso-img{width:100%;height:auto;display:block;border-radius:var(--r);
+  box-shadow:0 24px 64px rgba(0,0,0,.6);border:1px solid rgba(212,160,23,.15)}
+.curso-info{display:flex;flex-direction:column}
+.curso-badge-red{display:inline-flex;align-items:center;gap:8px;
+  background:rgba(192,0,0,.12);border:1px solid rgba(192,0,0,.3);border-radius:4px;
+  padding:7px 14px;font-size:.62rem;letter-spacing:2.5px;text-transform:uppercase;
+  color:#E05252;font-weight:700;margin-bottom:20px;width:fit-content}
+.curso-badge-red::before{content:'';width:7px;height:7px;border-radius:50%;background:#E05252;
+  animation:pulseDot 1.6s ease-in-out infinite;flex-shrink:0}
+@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
+.curso-info h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);
+  font-weight:900;margin-bottom:20px;line-height:1.15}
+.curso-info h2 em{font-style:normal;background:var(--g-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.curso-meta{display:flex;flex-direction:column;gap:14px;margin-bottom:28px}
+.curso-meta-row{display:flex;align-items:flex-start;gap:14px}
+.c-icon{width:38px;height:38px;background:rgba(212,160,23,.06);
+  border:1px solid rgba(212,160,23,.18);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.c-icon svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.curso-meta-text strong{display:block;font-size:.8rem;font-weight:700;color:var(--txt);margin-bottom:2px}
+.curso-meta-text span{font-size:.74rem;color:var(--txt2);line-height:1.6}
+.curso-info > p{font-size:.85rem;color:var(--txt2);line-height:1.9;margin-bottom:28px}
+
+/* ══ CONFERENCIA POSTER ═══════════════════════════ */
+.conf-poster-img{width:100%;height:auto;display:block;border-radius:var(--r) var(--r) 0 0;
+  box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.conf-aside-card-new{background:var(--card);border:1px solid rgba(212,160,23,.12);
+  border-radius:var(--r);overflow:hidden}
+.conf-aside-btn{padding:20px 24px}
+
 /* ══ RESPONSIVE ══════════════════════════════════ */
 @media(max-width:900px){
   .services-grid{grid-template-columns:repeat(2,1fr)}
   .maestro-grid,.conf-grid{grid-template-columns:1fr;gap:48px}
   .conf-aside{position:static}
+  .curso-grid{grid-template-columns:1fr;gap:36px}
 }
 @media(max-width:768px){
   .nav-links,.nav-cta{display:none}
@@ -501,6 +544,26 @@ footer p{font-size:.7rem;color:var(--txt3);letter-spacing:1px}
   /* ── Poles ── */
   .pole-row{gap:20px;margin-bottom:32px}
   .pole{width:13px;height:88px}
+
+  /* ── Video Clase ── */
+  .clase-video-outer{border-radius:0;margin:0 -20px}
+  .clase-video{max-height:260px}
+
+  /* ── Próximo Curso ── */
+  .curso-grid{gap:24px}
+  .curso-img{max-width:min(320px,78vw);margin:0 auto;display:block}
+  .curso-badge-red{font-size:.56rem;padding:5px 10px;letter-spacing:2px}
+  .curso-info h2{font-size:clamp(1.5rem,7vw,2rem);margin-bottom:14px}
+  .curso-meta{gap:10px;margin-bottom:20px}
+  .c-icon{width:32px;height:32px}
+  .c-icon svg{width:14px;height:14px}
+  .curso-meta-text strong{font-size:.75rem}
+  .curso-meta-text span{font-size:.7rem}
+  .curso-info > p{font-size:.8rem;margin-bottom:20px}
+
+  /* ── Clase Caption ── */
+  .clase-caption .clase-quote{font-size:1.05rem}
+  .clase-caption p{font-size:.72rem;letter-spacing:1px}
 }
 </style>
 </head>
@@ -530,7 +593,7 @@ footer p{font-size:.7rem;color:var(--txt3);letter-spacing:1px}
     <span class="ld-pre">EST. MMXXVI &nbsp; CALI</span>
 
     <div class="ld-logo-wrap">
-      <img src="barberia.png" alt="La Casa del Barbero" class="ld-logo" id="ldLogo">
+      <img src="logosinfondo.png" alt="La Casa del Barbero" class="ld-logo" id="ldLogo">
     </div>
 
     <div class="ld-divider" aria-hidden="true">
@@ -565,7 +628,7 @@ footer p{font-size:.7rem;color:var(--txt3);letter-spacing:1px}
 <nav id="navbar">
   <div class="nav-in">
     <a href="#inicio" aria-label="Inicio">
-      <img src="barberia.png" class="nav-logo-img" alt="La Casa del Barbero">
+      <img src="logosinfondo.png" class="nav-logo-img" alt="La Casa del Barbero">
     </a>
     <ul class="nav-links">
       <li><a href="#servicios">Servicios</a></li>
@@ -588,7 +651,7 @@ footer p{font-size:.7rem;color:var(--txt3);letter-spacing:1px}
   <div class="hero-rays"></div>
   <div class="hero-vignette"></div>
   <div class="hero-content">
-    <img src="barberia.png" alt="La Casa del Barbero" class="hero-logo rv">
+    <img src="logosinfondo.png" alt="La Casa del Barbero" class="hero-logo rv">
     <div class="hero-ornament rv d1"><span>Cali &middot; Colombia</span></div>
     <div class="hero-btns rv d2">
       <a href="https://wa.me/573206878204?text=Hola%2C%20quiero%20inscribirme%20al%20curso%20de%20barber%C3%ADa"
@@ -738,8 +801,7 @@ footer p{font-size:.7rem;color:var(--txt3);letter-spacing:1px}
       <div class="maestro-visual rv-l">
         <div class="maestro-bg-text" aria-hidden="true">ME</div>
         <div class="maestro-frame">
-          <div class="mono">ME</div>
-          <div class="mono-sub">Mayk Ebano</div>
+          <img src="mayk.png" alt="Mayk Ebano — Fundador La Casa del Barbero" class="maestro-photo">
         </div>
       </div>
       <div class="maestro-info rv-r">
@@ -753,6 +815,81 @@ footer p{font-size:.7rem;color:var(--txt3);letter-spacing:1px}
           <span class="badge">Emprendedor</span>
           <span class="badge">Conferencista</span>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORNAMENT DIVIDER -->
+<div class="ornament" aria-hidden="true"><div class="ornament-diamond"></div></div>
+
+<!-- ══ EN EL AULA: VIDEO ══ -->
+<section class="clase-section">
+  <div class="container">
+    <div class="sec-pre rv"><span>Academia en Acción</span></div>
+    <h2 class="sec-title rv d1">Así se vive la <em>experiencia</em></h2>
+    <div class="clase-video-outer rv d2">
+      <video class="clase-video" autoplay muted loop playsinline preload="metadata">
+        <source src="clase.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="clase-caption rv d3">
+      <span class="clase-quote">Cada corte es una obra de arte</span>
+      <p>Instalaciones profesionales &nbsp;·&nbsp; Grupos de máximo 7 personas &nbsp;·&nbsp; Cali, Colombia</p>
+    </div>
+  </div>
+</section>
+
+<!-- ORNAMENT DIVIDER -->
+<div class="ornament" aria-hidden="true"><div class="ornament-diamond"></div></div>
+
+<!-- ══ PRÓXIMO CURSO ══ -->
+<section class="curso-section" id="proximo-curso">
+  <div class="container">
+    <div class="sec-pre rv"><span>Próxima Fecha</span></div>
+    <h2 class="sec-title rv d1"><em>Inscríbete</em> al Próximo Curso</h2>
+    <div class="curso-grid">
+      <div class="rv-l">
+        <img src="CURSO.png" alt="Próximo Curso de Barbería — La Casa del Barbero" class="curso-img">
+      </div>
+      <div class="curso-info rv-r">
+        <span class="curso-badge-red">Cupos Limitados · Máx. 7 Personas</span>
+        <h2>Curso Profesional<br>de <em>Barbería</em></h2>
+        <div class="curso-meta">
+          <div class="curso-meta-row">
+            <div class="c-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="curso-meta-text">
+              <strong>23 de Enero</strong>
+              <span>Próxima fecha disponible &mdash; ¡no te quedes sin cupo!</span>
+            </div>
+          </div>
+          <div class="curso-meta-row">
+            <div class="c-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="curso-meta-text">
+              <strong>Villas de Guadalupe, Cali</strong>
+              <span>Cra 62 #17a-67 &mdash; Instalaciones profesionales</span>
+            </div>
+          </div>
+          <div class="curso-meta-row">
+            <div class="c-icon">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <div class="curso-meta-text">
+              <strong>Máximo 7 personas por grupo</strong>
+              <span>Atención personalizada de Mayk Ebano</span>
+            </div>
+          </div>
+        </div>
+        <p>Formación completa en cortes profesionales, técnicas de afeitado, diseño de barba y administración de tu propio negocio. El curso que transforma barberos en empresarios.</p>
+        <a href="https://wa.me/573206878204?text=Hola%2C%20quiero%20inscribirme%20al%20curso%20de%20barber%C3%ADa%20del%2023%20de%20enero"
+           target="_blank" rel="noopener" class="btn btn-gold">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Reservar mi Cupo por WhatsApp
+        </a>
       </div>
     </div>
   </div>
@@ -793,13 +930,15 @@ footer p{font-size:.7rem;color:var(--txt3);letter-spacing:1px}
         </div>
       </div>
       <div class="conf-aside rv-r">
-        <div class="conf-aside-card">
-          <span class="quote">Domina el Arte,<br>Construye tu Imperio</span>
-          <h3>Eventos que transforman perspectivas</h3>
-          <p>No es motivación vacía. Es estrategia real, con experiencias reales de quien lo vivió. Mayk Ebano lleva su mensaje a escenarios en todo Colombia.</p>
-          <a href="https://www.instagram.com/lacasadelbarberocali/" target="_blank" rel="noopener" class="btn btn-ghost" style="width:100%;justify-content:center">
-            Ver en Instagram
-          </a>
+        <div class="conf-aside-card-new">
+          <img src="conferencia.png" alt="Conferencia Motivación para Emprendedores — Mayk Ebano" class="conf-poster-img">
+          <div class="conf-aside-btn">
+            <a href="https://wa.me/573206878204?text=Hola%2C%20me%20interesa%20una%20conferencia%20de%20emprendimiento"
+               target="_blank" rel="noopener" class="btn btn-gold" style="width:100%;justify-content:center">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              Reservar Conferencia
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -893,7 +1032,7 @@ footer p{font-size:.7rem;color:var(--txt3);letter-spacing:1px}
 
 <!-- ══ FOOTER ══ -->
 <footer>
-  <img src="barberia.png" alt="La Casa del Barbero" class="foot-logo">
+  <img src="logosinfondo.png" alt="La Casa del Barbero" class="foot-logo">
   <div class="foot-links">
     <a href="#servicios">Servicios</a>
     <a href="https://wa.me/573206878204" target="_blank" rel="noopener">WhatsApp</a>
@@ -930,16 +1069,6 @@ footer p{font-size:.7rem;color:var(--txt3);letter-spacing:1px}
   /* ── BACKGROUND REMOVAL (canvas flood-fill) ── */
   function removeBg(img) {
     try {
-      // Probar color de fondo en esquina superior-izquierda
-      const probe = document.createElement('canvas');
-      probe.width = 2; probe.height = 2;
-      const pc = probe.getContext('2d');
-      pc.drawImage(img, 0, 0, 2, 2);
-      const px = pc.getImageData(0, 0, 1, 1).data;
-      // Fondo blanco → tolerancia 35 (cubre anti-aliasing hasta ~220)
-      // Fondo oscuro/rojo → tolerancia 40
-      const tol = (px[0] > 180 && px[1] > 180 && px[2] > 180) ? 35 : 40;
-
       const c = document.createElement('canvas');
       c.width = img.naturalWidth; c.height = img.naturalHeight;
       const ctx = c.getContext('2d');
@@ -947,24 +1076,44 @@ footer p{font-size:.7rem;color:var(--txt3);letter-spacing:1px}
       const id = ctx.getImageData(0, 0, c.width, c.height);
       const d = id.data, W = c.width, H = c.height;
 
-      // Color de fondo = promedio de las 4 esquinas
-      const corners = [[0,0],[W-1,0],[0,H-1],[W-1,H-1]];
-      let bgR=0, bgG=0, bgB=0;
-      corners.forEach(([x,y])=>{ const p=(y*W+x)*4; bgR+=d[p]; bgG+=d[p+1]; bgB+=d[p+2]; });
-      bgR=Math.round(bgR/4); bgG=Math.round(bgG/4); bgB=Math.round(bgB/4);
+      // Si las esquinas ya son transparentes → PNG sin fondo, solo reemplazar
+      const tl = 3, tr = (W-1)*4+3, bl = (H-1)*W*4+3, br = ((H-1)*W+(W-1))*4+3;
+      if(d[tl]<15 && d[tr]<15 && d[bl]<15 && d[br]<15) {
+        c.className=img.className; c.style.cssText=img.style.cssText;
+        if(img.getAttribute('style')) c.setAttribute('style',img.getAttribute('style'));
+        const wasOn=img.classList.contains('on'); img.replaceWith(c);
+        if(wasOn||c.getBoundingClientRect().top<window.innerHeight) c.classList.add('on');
+        return;
+      }
+
+      // Estimar color de fondo muestreando múltiples puntos del borde
+      const step = Math.max(1, Math.floor(W/10));
+      let sumR=0, sumG=0, sumB=0, cnt=0;
+      for(let x=0;x<W;x+=step){
+        [0,H-1].forEach(y=>{ const p=(y*W+x)*4; if(d[p+3]>200){ sumR+=d[p]; sumG+=d[p+1]; sumB+=d[p+2]; cnt++ }});
+      }
+      for(let y=0;y<H;y+=step){
+        [0,W-1].forEach(x=>{ const p=(y*W+x)*4; if(d[p+3]>200){ sumR+=d[p]; sumG+=d[p+1]; sumB+=d[p+2]; cnt++ }});
+      }
+      if(!cnt){ img.style.mixBlendMode='multiply'; return; }
+      const bgR=Math.round(sumR/cnt), bgG=Math.round(sumG/cnt), bgB=Math.round(sumB/cnt);
+
+      // Tolerancia según tipo de fondo:
+      // gris neutro (metálico/grad) → 60  |  blanco → 35  |  otro → 42
+      const isNeutral = Math.abs(bgR-bgG)<40 && Math.abs(bgG-bgB)<40 && Math.abs(bgR-bgB)<40;
+      const isLight = bgR>130 && bgG>130 && bgB>130;
+      const tol = (isNeutral && isLight) ? 60 : (bgR>200 && bgG>200 && bgB>200 ? 35 : 42);
 
       const visited = new Uint8Array(W * H);
       const stack = [];
       function push(x, y) {
         if (x<0||x>=W||y<0||y>=H) return;
         const i = y*W+x; if (visited[i]) return;
-        const p = i*4;
+        const p = i*4; if(d[p+3]<10){ visited[i]=1; return; }
         if (Math.abs(d[p]-bgR)+Math.abs(d[p+1]-bgG)+Math.abs(d[p+2]-bgB) < tol*3) {
           visited[i]=1; d[p+3]=0; stack.push(x,y);
         }
       }
-      // Iniciar flood-fill desde las 4 esquinas + bordes del perímetro
-      corners.forEach(([x,y])=>push(x,y));
       for(let x=0;x<W;x++){ push(x,0); push(x,H-1); }
       for(let y=0;y<H;y++){ push(0,y); push(W-1,y); }
       while(stack.length){ const y=stack.pop(), x=stack.pop(); push(x-1,y); push(x+1,y); push(x,y-1); push(x,y+1); }
@@ -976,14 +1125,13 @@ footer p{font-size:.7rem;color:var(--txt3);letter-spacing:1px}
       img.replaceWith(c);
       if(wasOn||c.getBoundingClientRect().top < window.innerHeight) c.classList.add('on');
     } catch(e) {
-      // Fallback CSS si Canvas falla (CORS u otro error)
       img.style.mixBlendMode = 'multiply';
       img.style.filter = 'contrast(1.05)';
     }
   }
 
   function processLogos() {
-    document.querySelectorAll('img[src="barberia.png"]').forEach(img => {
+    document.querySelectorAll('img[src="logosinfondo.png"]').forEach(img => {
       if (img.complete && img.naturalWidth) removeBg(img);
       else img.onload = () => removeBg(img);
     });
